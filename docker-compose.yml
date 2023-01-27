@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  php-httpd:
+    image: php:7.3-apache
+    ports:
+      - 8080:80
+    volumes:
+      - "./DR:/var/www/html"
+  
+  mariadb:
+    image: mariadb:10.5.2
+    volumes:
+      - mariadb-volume:/var/lib/mysql
+    environment:
+        TZ: "Asia/Beirut"
+        MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+        MYSQL_ROOT_PASSWORD: "rtpwd"
+        MYSQL_USER: 'tstuser'
+        MYSQL_PASSWORD: 'tstpassword'
+        MYSQL_DATABASE: 'tstdb'
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+        - 'mariadb:db'
+    ports:
+        - 8081:80
+
+volumes:
+  mariadb-volume:
