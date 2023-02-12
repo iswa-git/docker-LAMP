@@ -1,4 +1,4 @@
-name: TestCI
+name: LAMP WF
 
 on: push
 
