@@ -1,4 +1,4 @@
-name: LAMP WF
+name: LAMP_WF
 
 on: push
 
@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v3
       name: Check out code
       with:
-        repository: 'iswa-git/LAMP'
+        repository: 'iswa-git/docker-LAMP'
 
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
