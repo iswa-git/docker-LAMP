@@ -1,2 +1,5 @@
 PHP version 7.3
 MariaDB: 10.5.2
+
+the Dockerfile installs nginx for test purposes , while to docker-compose requests LAMP stack
+This is (Dockerfile), testing Git workflow, and pushing the image to docker hub
