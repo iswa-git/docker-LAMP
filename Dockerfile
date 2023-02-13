@@ -1,11 +1,13 @@
-FROM php:7.3-apache
+FROM nginx
 
-WORKDIR /var/www/html
+WORKDIR /usr/share/nginx/html
 
-COPY . . 
+#COPY . . 
+COPY ./DR/index.html ./
 
-volume ./DR:/var/www/html
+#volume /usr/share/nginx/html
 
 #RUN  pip install --no-cache-dir -r requirements.txt
+#RUN docker build -t nginx
 
 #CMD [ "python", "test.py" ]
