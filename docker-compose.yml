@@ -1,8 +1,11 @@
 version: '3.8'
 
 services:
-  php-httpd:
-    image: php:7.3-apache
+  php:
+    # image: 
+    # image: php:7.3-apache
+    build: 
+      context: .
     ports:
       - 8085:80
     volumes:
